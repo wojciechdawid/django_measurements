@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of measurements</title>
+</head>
+<body>
+<h2>List of measurements</h2>
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Systolic</th>
+        <th>Diastolic</th>
+    </thead>
+    <tbody>
+    {%  for m in list_of_measurements %}
+        <tr>
+            <td><a href="{% url 'measurements:details' m.id%}">{{  m.date }}</a></td>
+            <td>{{  m.systolic }}</td>
+            <td>{{  m.diastolic }}</td>
+        </tr>
+    {%  endfor %}
+    </tbody>
+</table>
+</body>
+</html>
